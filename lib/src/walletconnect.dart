@@ -392,7 +392,7 @@ class WalletConnect {
     );
 
     unawaited(_sendRequest(request));
-
+    await Future.delayed(const Duration(milliseconds: 100));
     await _handleSessionDisconnect(errorMessage: message, forceClose: true);
   }
 
